@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".CatalogActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/startNonEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+
+        <ProgressBar
+            android:id="@+id/pBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:max="100"
+            android:progressTint="#D82020"
+            android:scrollbarSize="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/rvStart"
+            app:layout_constraintEnd_toEndOf="@id/startNonEmpty"
+            app:layout_constraintStart_toStartOf="@id/startNonEmpty"
+            app:layout_constraintTop_toTopOf="@id/startNonEmpty" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/startNonEmpty"
+            app:layout_constraintEnd_toEndOf="@id/startNonEmpty"
+            app:layout_constraintStart_toStartOf="@id/startNonEmpty"
+            app:layout_constraintTop_toTopOf="@id/startNonEmpty" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/startEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-80dp">
+
+        <ImageView
+            android:id="@+id/imgStartEmpty"
+            android:layout_width="161dp"
+            android:layout_height="157dp"
+            app:layout_constraintBottom_toBottomOf="@id/startEmpty"
+            app:layout_constraintEnd_toEndOf="@id/startEmpty"
+            app:layout_constraintStart_toStartOf="@id/startEmpty"
+            app:layout_constraintTop_toTopOf="@id/startEmpty"
+            app:srcCompat="@drawable/ic_asearch" />
+
+        <TextView
+            android:id="@+id/txtStartEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brak ćwiczeń"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/imgStartEmpty"
+            app:layout_constraintStart_toStartOf="@id/imgStartEmpty"
+            app:layout_constraintTop_toBottomOf="@+id/imgStartEmpty" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

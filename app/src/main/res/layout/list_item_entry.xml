@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/parent_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/father"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/standard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/extended">
+
+
+                <TextView
+
+                    android:id="@+id/txtTrainingName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trening"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/txtTrainingTotal"
+                    app:layout_constraintEnd_toEndOf="@id/standard"
+                    app:layout_constraintStart_toStartOf="@id/standard"
+                    app:layout_constraintTop_toTopOf="@id/standard" />
+
+                <TextView
+                    android:id="@+id/txtTrainingDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Czas trwania:"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTrainingTotal"
+                    app:layout_constraintEnd_toStartOf="@+id/txtDurationData"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/standard"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTrainingName1" />
+
+                <TextView
+                    android:id="@+id/txtTrainingTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Łączny ciężar:"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgArrowDown"
+                    app:layout_constraintEnd_toStartOf="@+id/txtTotalData"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txtDurationData"
+                    app:layout_constraintTop_toTopOf="@+id/imgArrowDown" />
+
+                <TextView
+                    android:id="@+id/txtNoteData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTrainingNote"
+                    app:layout_constraintEnd_toStartOf="@+id/imgArrowDown"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txtTrainingNote"
+                    app:layout_constraintTop_toTopOf="@+id/txtTrainingNote" />
+
+                <TextView
+                    android:id="@+id/txtDurationData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTrainingDuration"
+                    app:layout_constraintEnd_toStartOf="@+id/txtTrainingTotal"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txtTrainingDuration"
+                    app:layout_constraintTop_toTopOf="@+id/txtTrainingDuration" />
+
+                <TextView
+                    android:id="@+id/txtTotalData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTrainingTotal"
+                    app:layout_constraintEnd_toStartOf="@+id/txtTrainingNote"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txtTrainingTotal" />
+
+                <TextView
+                    android:id="@+id/txtTrainingNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ocena:"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTrainingTotal"
+                    app:layout_constraintEnd_toStartOf="@+id/txtNoteData"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txtTotalData"
+                    app:layout_constraintTop_toTopOf="@+id/txtTrainingTotal" />
+
+                <ImageView
+                    android:id="@+id/imgArrowDown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="@id/standard"
+                    app:layout_constraintEnd_toEndOf="@id/standard"
+                    app:layout_constraintTop_toTopOf="@id/standard"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/extended"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/standard">:
+                android:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="400dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:scrollbars="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/extended"
+                    app:layout_constraintEnd_toEndOf="@id/extended"
+                    app:layout_constraintStart_toStartOf="@id/extended"
+                    app:layout_constraintTop_toTopOf="@id/extended" />
+
+                <RatingBar
+                    android:id="@+id/rBarExhaust"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtExhaustLvl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toTopOf="@+id/txtExhaustLvl"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <RatingBar
+                    android:id="@+id/rBarFocus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtFocusLvl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toTopOf="@+id/txtFocusLvl"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <RatingBar
+                    android:id="@+id/rBarMotivation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtMotivationLvl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toTopOf="@+id/txtMotivationLvl"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <RatingBar
+                    android:id="@+id/rBarSatisfaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtSatisfactionLvl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toTopOf="@+id/txtSatisfactionLvl"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/txtExhaustLvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="Poziom zmęczenia:"
+                    app:layout_constraintBottom_toTopOf="@+id/txtFocusLvl"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                    app:layout_constraintStart_toStartOf="@id/extended"
+                    app:layout_constraintTop_toTopOf="@id/extended" />
+
+                <TextView
+                    android:id="@+id/txtFocusLvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="Poziom skupienia:"
+                    app:layout_constraintBottom_toTopOf="@+id/txtMotivationLvl"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                    app:layout_constraintStart_toStartOf="@id/extended"
+                    app:layout_constraintTop_toBottomOf="@+id/txtExhaustLvl" />
+
+                <TextView
+                    android:id="@+id/txtMotivationLvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="Poziom motywacji:"
+                    app:layout_constraintBottom_toTopOf="@+id/txtSatisfactionLvl"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                    app:layout_constraintStart_toStartOf="@id/extended"
+                    app:layout_constraintTop_toBottomOf="@+id/txtFocusLvl" />
+
+                <TextView
+                    android:id="@+id/txtSatisfactionLvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="Poziom satysfakcji:"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                    app:layout_constraintStart_toStartOf="@id/extended"
+                    app:layout_constraintTop_toBottomOf="@+id/txtMotivationLvl" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="140dp" />
+
+                <ImageView
+                    android:id="@+id/imgArrowUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="@id/extended"
+                    app:layout_constraintTop_toBottomOf="@+id/rvHistory"
+                    app:srcCompat="@drawable/ic_arrow_up" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="376dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

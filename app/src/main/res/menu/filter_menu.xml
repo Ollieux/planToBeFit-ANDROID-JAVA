@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/filter_none"
+        android:title="Wszystkie" />
+    <item
+        android:id="@+id/filter_arms"
+        android:title="Ręce" />
+    <item
+        android:id="@+id/filter_chest"
+        android:title="Klatka piersiowa" />
+    <item
+        android:id="@+id/filter_back"
+        android:title="Plecy" />
+</menu>

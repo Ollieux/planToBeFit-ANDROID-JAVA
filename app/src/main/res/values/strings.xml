@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">planToBeFit</string>
+    <string name="str_start">Rozpocznij Trening</string>
+    <string name="str_history">Historia Treningów</string>
+    <string name="str_catalog">Wybór Ćwiczeń</string>
+    <string name="str_cr">"copyright © 2022 Oliwier Pszeniczko. wszelkie prawa zastrzerzone."</string>
+</resources>
