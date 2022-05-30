@@ -49,7 +49,7 @@ public class Utils {
     private int counterTrainingDetail;
 
     private Utils(Context context) {
-        sharedPreferences = context.getSharedPreferences("my_db3", Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("my_db4", Context.MODE_PRIVATE);
 
         if (null == getCatalogExercises()) {
             initData();
