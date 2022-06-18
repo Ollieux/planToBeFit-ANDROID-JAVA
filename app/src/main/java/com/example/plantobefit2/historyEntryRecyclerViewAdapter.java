@@ -1,7 +1,5 @@
 package com.example.plantobefit2;
 
-
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -192,8 +190,8 @@ public class historyEntryRecyclerViewAdapter extends RecyclerView.Adapter<histor
                 ArrayList<TrainingEntry> details = Utils.getInstance(context).getTrainingDetail();
                 if(null != details) {
                     details.get(position).setMotivation(holder.rBarMotivation.getRating());
-                    details.get(position).setSatisfaction(holder.rBarMotivation.getRating());
-                    details.get(position).setExhaust(holder.rBarMotivation.getRating());
+                    details.get(position).setSatisfaction(holder.rBarSatisfaction.getRating());
+                    details.get(position).setExhaust(holder.rBarExhaust.getRating());
                     details.get(position).setFocus(holder.rBarFocus.getRating());
                     details.get(position).setNote();
                     Utils.getInstance(context).updateTrainingDetail(details);

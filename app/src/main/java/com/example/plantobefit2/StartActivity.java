@@ -71,7 +71,6 @@ public class StartActivity extends AppCompatActivity {
                     System.out.println("Inside Utils.getInstance(this).addToTrainingsData(id, data)");
                     //String a = Utils.getInstance(this).getTrainingsData().get(0).get(0); ###
 
-
                 }
             }
 
@@ -101,7 +100,6 @@ public class StartActivity extends AppCompatActivity {
             startNonEmpty.setVisibility(View.GONE);
             startEmpty.setVisibility(View.VISIBLE);
         }
-
 
         buildRecycleView();
 
@@ -199,7 +197,6 @@ public class StartActivity extends AppCompatActivity {
 
 
         }
-
 
     private void buildRecycleView() {
 
