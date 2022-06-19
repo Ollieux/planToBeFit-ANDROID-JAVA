@@ -452,6 +452,7 @@ public class Utils {
             id = getCounterTrainingDetail();
         }
         TrainingEntry init = new TrainingEntry(id, 0, 0, 0, 0, 0, 0, 0, 0, "", "");
+        //TODO: tu nie powinien być increment countera?
         details.add(init);
         editor.putString(TRAINING_DETAIL_KEY, gson.toJson(details));
         editor.commit();

@@ -204,8 +204,6 @@ public class historyEntryRecyclerViewAdapter extends RecyclerView.Adapter<histor
 
     }
 
-
-
     @Override
     public int getItemCount() {
         return historyList.size();

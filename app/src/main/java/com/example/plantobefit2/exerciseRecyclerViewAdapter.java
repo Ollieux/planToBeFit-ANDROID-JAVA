@@ -142,10 +142,6 @@ public class exerciseRecyclerViewAdapter extends RecyclerView.Adapter<exerciseRe
            holder.txtSetsData.setVisibility(View.VISIBLE);
            holder.txtRepsData.setVisibility(View.VISIBLE);
 
-
-
-
-
            holder.btnExerciseFinished.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
@@ -290,7 +286,6 @@ public class exerciseRecyclerViewAdapter extends RecyclerView.Adapter<exerciseRe
         notifyDataSetChanged();
 
     }
-
 
     public void setHistoryList(ArrayList<HistoryEntry> historyList) {
         this.historyList = historyList;

@@ -7,15 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.SignalThresholdInfo;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 //import nl.dionsegijn.konfetti.core.Position;
 //import nl.dionsegijn.konfetti.xml.KonfettiView;
@@ -46,7 +42,7 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_2);
+        setContentView(R.layout.activity_start);
 
         // getActivity().setTitle("Trening");
 
