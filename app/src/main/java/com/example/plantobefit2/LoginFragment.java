@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.Date;
@@ -68,6 +70,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Nick
     public void onClick(View v) {
         if (!User.iflog) {
             login();
+
         }
     }
 
@@ -92,6 +95,71 @@ public class LoginFragment extends Fragment implements View.OnClickListener,Nick
                                                 Toast.makeText(getActivity(), "Zalogowano", Toast.LENGTH_SHORT).show();
                                                 User.iflog = true;
                                                 status.setText((User.iflog == true ? "Zalogowany" : "Wylogowany"));
+
+
+                                                //TODO:pobieranie z Firestora, wyzerowanie treningu,
+
+//                                                Utils.getInstance(getActivity()).removeTotalStartedExercises();
+//                                                System.out.println("####1");
+//                                                Utils.getInstance(getActivity()).removeProgressBarValue(); //TODONE: dopiero gdy zostanie dodane nowe cwiczenie
+//                                                System.out.println("####2");
+//                                                Utils.getInstance(getActivity()).removeSingleDoneExercises();
+//                                                System.out.println("####3");
+//                                                Utils.getInstance(getActivity()).removeInitStartedExercises();
+//                                                System.out.println("####4");
+//                                                Utils.getInstance(getActivity()).updateStartedTrainingStatus();
+
+//                                                try {
+//                                                    FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+//                                                    firestore.collection("User").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                                                        @Override
+//                                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                                                            if (task.isSuccessful()) {
+//                                                                for (QueryDocumentSnapshot document : task.getResult()) {
+//                                                                    Map<String, Object> doc = document.getData();
+//
+//                                                                    String nick = (String) doc.get("Nick");
+//
+//                                                                    for(String key : doc.keySet()) {
+//                                                                        if (key.startsWith("Trening")) {
+//                                                                            System.out.println(key);
+//
+//                                                                            Map<Integer, Object> rec = (Map<Integer, Object>) doc.get(key);
+//                                                                            for(int id: rec.keySet()) {
+//                                                                                int eid = id;
+//                                                                                Map<String, Object> rec2 = (Map<String, Object>) rec.get(key);
+//                                                                                int ereps = Integer.parseInt(String.valueOf((Integer) rec2.get("Reps")));
+//                                                                                System.out.println("eid equals : " + eid + "ereps equals: " + ereps);
+//
+//                                                                                //TODO:
+//                                                                                // HistoryEntry, details, dodanie do sharedPreferences,
+//                                                                                // updateTrainingDetail wyzeruje historie, manualnie counter na ty ile będzie teraz
+//
+//                                                                            }
+//
+//
+//                                                                        }
+//
+//
+//                                                                    }
+//                                                                }
+//                                                                //new UpdateAlco().execute();
+//
+//                                                            } else {
+//
+//                                                            }
+//                                                        }
+//                                                    });
+//
+//                                                    //return true;
+//
+//
+//                                                }catch (Exception e) {
+//                                                    System.out.println("error");
+//                                                }
+
+
+
                                             } else {
                                                 NickDialogFragment dialog = new NickDialogFragment();
                                                 dialog.setTargetFragment(LoginFragment.this, 1);

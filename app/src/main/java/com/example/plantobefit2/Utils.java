@@ -47,6 +47,7 @@ public class Utils {
     // private boolean startedTrainingStatus = false; ###
     private boolean startedTrainingStatus;
     private int counterTrainingDetail;
+    public static ArrayList<Object> firestorehelper = new ArrayList<>();
 
     private Utils(Context context) {
         sharedPreferences = context.getSharedPreferences("my_db4", Context.MODE_PRIVATE);

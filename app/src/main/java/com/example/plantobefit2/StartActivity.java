@@ -1,17 +1,33 @@
 package com.example.plantobefit2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 //import nl.dionsegijn.konfetti.core.Position;
 //import nl.dionsegijn.konfetti.xml.KonfettiView;
@@ -30,6 +46,11 @@ public class StartActivity extends AppCompatActivity {
     private ProgressBar pBar;
     private ConstraintLayout startEmpty;
     private ConstraintLayout startNonEmpty;
+
+
+    private FirebaseAuth auth;
+    private FirebaseUser user;
+    private FirebaseFirestore db;
     // private KonfettiView konfetti;
 
     ArrayList<String> data = new ArrayList();
@@ -167,8 +188,106 @@ public class StartActivity extends AppCompatActivity {
                     System.out.println("###5");
                     Utils.getInstance(StartActivity.this).addToTrainingsHistory();
                     System.out.println("###6");
-                    Utils.getInstance(StartActivity.this).removeHistoryExercises(); //TODO: też dopiero gdy zostanie dodane nowe cwiczenie, czemu?
+
+//                    if(User.iflog) {
+//                        auth = FirebaseAuth.getInstance();
+//                        user = auth.getCurrentUser();
+//                        db = FirebaseFirestore.getInstance();
+//
+//
+//
+//                        try {
+//                            FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+//                            DocumentReference docIdRef = rootRef.collection("User").document(user.getUid());
+//                            docIdRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                                    if (task.isSuccessful()) {
+//                                        DocumentSnapshot document = task.getResult();
+//                                        if (document.exists()) {
+//                                            Map<String, Object> count = document.getData();
+//                                            System.out.println("count size equals" + count.size());
+//                                            Map map = new HashMap<String, Object>();
+//                                            ArrayList<HistoryEntry> data = Utils.getInstance(StartActivity.this).getHistoryExercises();
+//                                            System.out.println("Data size equals" + data.size());
+//
+//                                            if (document.get("Trening" + count.size()) != null) {
+//
+//                                                //Map map2 = new HashMap<Integer, Object>();
+//                                                Map map2 = new HashMap<String, Object>();
+//                                                int eid = 0;
+//                                                int eweight = 0;
+//                                                int ereps = 0;
+//                                                int esets = 0;
+//                                                System.out.println("fb pre petla");
+//                                                for(HistoryEntry e: data) {
+//                                                    System.out.println("fb2 petla");
+//
+//                                                    eid = e.getId();
+//                                                    System.out.println("eid equals" + eid);
+//                                                    eweight = e.getWeight();
+//                                                    ereps = e.getReps();
+//                                                    esets = e.getSets();
+//
+//                                                    Map map3 = new HashMap<String, Object>();
+//                                                    map3.put("Weight", eweight);
+//                                                    map3.put("Reps", ereps);
+//                                                    map3.put("Sets", esets);
+//                                                    //map2.put(eid, map3);
+//                                                    map2.put(String.valueOf(eid), map3);
+//
+//                                                }
+//                                                map.put("Trening" + count.size(), map2);
+//
+//                                                db.collection("User").document(user.getUid())
+//                                                        .update(map);
+//
+//                                            } else {
+//                                                //Map map2 = new HashMap<Integer, Object>();
+//                                                Map map2 = new HashMap<String, Object>();
+//                                                int eid = 0;
+//                                                int eweight = 0;
+//                                                int ereps = 0;
+//                                                int esets = 0;
+//                                                System.out.println("fb2 pre petla");
+//                                                for(HistoryEntry e: data) {
+//
+//                                                    eid = e.getId();
+//                                                    eweight = e.getWeight();
+//                                                    ereps = e.getReps();
+//                                                    esets = e.getSets();
+//                                                    System.out.println("fb2 petla");
+//
+//                                                    Map map3 = new HashMap<String, Object>();
+//                                                    map3.put("Weight", eweight);
+//                                                    map3.put("Reps", ereps);
+//                                                    map3.put("Sets", esets);
+//                                                    //map2.put(eid, map3);
+//                                                    map2.put(String.valueOf(eid), map3);
+//
+//                                                }
+//                                                map.put("Trening" + count.size(), map2);
+//                                                //Toast.makeText(StartActivity.this, "Tamto", Toast.LENGTH_SHORT).show();
+//
+//                                                db.collection("User").document(user.getUid())
+//                                                        .set(map, SetOptions.merge());
+//
+//                                            }
+//                                        }
+//                                    }
+//                                }
+//                        });
+//                    }catch (SQLiteException e) {
+//                            System.out.println("bład");
+//                        }
+//                }
+
+                   Utils.getInstance(StartActivity.this).removeHistoryExercises();
+
+                    //TODO: też dopiero gdy zostanie dodane nowe cwiczenie, czemu?
                     System.out.println("###7");
+
+
 
                     //konfetti.setOnClickListener() {
                     // konfetti.build()
